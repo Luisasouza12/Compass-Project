@@ -1,73 +1,158 @@
-# Central+ — Sistema de Atendimento ao Cliente
+# 🧭 Central+ — Sistema de Atendimento ao Cliente
 
-Aplicação web para registrar, encaminhar e acompanhar solicitações de clientes. Foi pensada como projeto de portfólio: a pessoa cliente realiza um atendimento guiado e a equipe opera os registros em um painel separado e protegido.
+Uma aplicação web desenvolvida para **registrar, encaminhar e acompanhar solicitações de clientes** de forma organizada e centralizada.
 
-## Funcionalidades
+O projeto foi desenvolvido como parte de um **portfólio de desenvolvimento web**, simulando um cenário real em que clientes realizam um atendimento guiado enquanto a equipe responsável gerencia as solicitações por meio de um painel administrativo.
 
-- Fluxo de atendimento em três etapas, com validação e protocolo automático.
-- Encaminhamento automático por assunto para o setor adequado.
-- Persistência real em banco SQLite, criado automaticamente na primeira execução.
-- API REST para criar, listar, consultar, atualizar e remover atendimentos.
-- Painel administrativo com autenticação simples, indicadores, busca, filtros e ordenação.
-- Alteração de status, setor e observações internas.
-- Interface responsiva, com feedback de erros e estados visuais por status.
+---
 
-## Tecnologias
+## ✨ Funcionalidades
 
-HTML5, CSS3, JavaScript puro, Node.js, Express, SQLite (`better-sqlite3`), `express-session` e `dotenv`.
+### 👤 Atendimento do cliente
 
-## Estrutura
+* Fluxo de atendimento dividido em três etapas.
+* Validação dos dados preenchidos.
+* Geração automática de protocolo.
+* Encaminhamento automático por assunto para o setor adequado.
+* Interface responsiva e intuitiva.
+* Feedback visual para erros e diferentes status do atendimento.
+
+### 🔐 Painel administrativo
+
+* Autenticação para acesso ao painel.
+* Indicadores gerais dos atendimentos.
+* Busca, filtros e ordenação.
+* Visualização detalhada das solicitações.
+* Alteração de status.
+* Alteração do setor responsável.
+* Adição de observações internas.
+* Exclusão de atendimentos.
+
+### 🗄️ Persistência e API
+
+* Banco de dados SQLite criado automaticamente na primeira execução.
+* API REST para gerenciamento dos atendimentos.
+* Operações de criação, consulta, atualização e exclusão.
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+| Tecnologia          | Utilização                             |
+| ------------------- | -------------------------------------- |
+| **HTML5**           | Estrutura das interfaces               |
+| **CSS3**            | Estilização e responsividade           |
+| **JavaScript**      | Lógica da aplicação e interações       |
+| **Node.js**         | Ambiente de execução do backend        |
+| **Express**         | Construção da API REST                 |
+| **SQLite**          | Persistência dos dados                 |
+| **better-sqlite3**  | Integração com o banco SQLite          |
+| **express-session** | Gerenciamento de sessões               |
+| **dotenv**          | Gerenciamento de variáveis de ambiente |
+
+---
+
+## 📁 Estrutura do projeto
 
 ```text
-backend/
-  config/        # Leitura das variáveis de ambiente
-  controllers/   # Regras dos endpoints
-  database/      # Inicialização e arquivo SQLite local
-  middlewares/   # Proteção de rotas administrativas
-  routes/        # Rotas da API
-  services/      # Protocolo e direcionamento
-  server.js
-frontend/
-  css/ js/ pages/ # Interfaces do cliente e administração
+Compass-Project/
+│
+├── backend/
+│   ├── config/          # Configurações e variáveis de ambiente
+│   ├── controllers/     # Regras dos endpoints
+│   ├── database/        # Banco e inicialização do SQLite
+│   ├── middlewares/     # Proteção das rotas administrativas
+│   ├── routes/          # Rotas da API
+│   ├── services/        # Protocolo e direcionamento
+│   └── server.js        # Inicialização do servidor
+│
+├── frontend/
+│   ├── css/             # Estilos
+│   ├── js/              # Scripts
+│   └── pages/           # Interfaces do sistema
+│
+├── .env.example         # Exemplo das variáveis de ambiente
+├── .gitignore           # Arquivos ignorados pelo Git
+├── package.json         # Dependências e scripts
+└── README.md            # Documentação do projeto
 ```
 
-## Como executar
+---
 
-1. Instale as dependências:
+## 🚀 Como executar
 
-   ```bash
-   npm install
-   ```
+### 1. Clone o repositório
 
-2. Copie `.env.example` para `.env` e defina uma senha segura para o painel:
+```bash
+git clone https://github.com/Luisasouza12/Compass-Project.git
+```
 
-   ```bash
-   copy .env.example .env
-   ```
+### 2. Acesse a pasta do projeto
 
-3. Inicie a aplicação:
+```bash
+cd Compass-Project
+```
 
-   ```bash
-   npm start
-   ```
+### 3. Instale as dependências
 
-O banco `backend/database/atendimentos.db` e sua tabela são criados automaticamente. Acesse `http://localhost:3000` para o atendimento e `http://localhost:3000/admin` para o painel. Use as credenciais definidas no `.env` (em desenvolvimento, os valores padrão são `admin@exemplo.com` e `admin123`).
+```bash
+npm install
+```
 
-## API
+### 4. Configure as variáveis de ambiente
 
-| Método | Rota | Uso |
-| --- | --- | --- |
-| `POST` | `/api/atendimentos` | Cria um atendimento (pública) |
-| `GET` | `/api/atendimentos` | Lista atendimentos (admin) |
-| `GET` | `/api/atendimentos/:id` | Detalhes (admin) |
-| `PUT` | `/api/atendimentos/:id` | Atualiza status, setor ou observações (admin) |
-| `DELETE` | `/api/atendimentos/:id` | Exclui um atendimento (admin) |
-| `GET` | `/api/atendimentos/dashboard` | Indicadores do painel (admin) |
+Copie o arquivo `.env.example` para `.env`:
 
-Exemplo de criação:
+**Windows:**
+
+```bash
+copy .env.example .env
+```
+
+Defina no arquivo `.env` as configurações necessárias para o painel administrativo.
+
+> ⚠️ O arquivo `.env` não deve ser enviado para o GitHub. Ele já está incluído no `.gitignore`.
+
+### 5. Inicie a aplicação
+
+```bash
+npm start
+```
+
+O banco de dados SQLite e sua estrutura são criados automaticamente na primeira execução.
+
+### 6. Acesse a aplicação
+
+**Atendimento do cliente:**
+
+```text
+http://localhost:3000
+```
+
+**Painel administrativo:**
+
+```text
+http://localhost:3000/admin
+```
+
+As credenciais utilizadas no ambiente de desenvolvimento são definidas pelas variáveis configuradas no `.env`.
+
+---
+
+## 🔌 API REST
+
+| Método   | Endpoint                      | Descrição                              |
+| -------- | ----------------------------- | -------------------------------------- |
+| `POST`   | `/api/atendimentos`           | Cria um novo atendimento               |
+| `GET`    | `/api/atendimentos`           | Lista os atendimentos                  |
+| `GET`    | `/api/atendimentos/:id`       | Consulta os detalhes de um atendimento |
+| `PUT`    | `/api/atendimentos/:id`       | Atualiza status, setor ou observações  |
+| `DELETE` | `/api/atendimentos/:id`       | Exclui um atendimento                  |
+| `GET`    | `/api/atendimentos/dashboard` | Retorna os indicadores do painel       |
+
+### Exemplo de criação de atendimento
 
 ```json
-POST /api/atendimentos
 {
   "nome_cliente": "Ana Silva",
   "contato": "ana@email.com",
@@ -76,9 +161,47 @@ POST /api/atendimentos
 }
 ```
 
-## Próximas melhorias
+---
 
-- Contas administrativas persistidas com senha criptografada.
-- Anexos, histórico de alterações e notificações por e-mail.
-- Paginação e testes automatizados.
-- Implantação com armazenamento de sessão apropriado para produção.
+## 🔄 Fluxo da aplicação
+
+```text
+Cliente
+   ↓
+Atendimento guiado
+   ↓
+Validação dos dados
+   ↓
+Geração do protocolo
+   ↓
+Direcionamento automático
+   ↓
+Banco de dados
+   ↓
+Painel administrativo
+   ↓
+Gestão do atendimento
+```
+
+---
+
+## 🔮 Próximas melhorias
+
+* [ ] Contas administrativas persistidas com senha criptografada.
+* [ ] Anexos nos atendimentos.
+* [ ] Histórico de alterações.
+* [ ] Notificações por e-mail.
+* [ ] Paginação dos resultados.
+* [ ] Testes automatizados.
+* [ ] Implantação em ambiente de produção.
+* [ ] Armazenamento de sessão adequado para produção.
+
+---
+
+## 👩‍💻 Sobre o projeto
+
+O **Central+** foi desenvolvido como projeto de portfólio com o objetivo de demonstrar conhecimentos em **desenvolvimento web, construção de APIs REST, gerenciamento de banco de dados, autenticação, organização de código e desenvolvimento de interfaces responsivas**.
+
+---
+
+⭐ Se este projeto foi útil ou interessante para você, considere deixar uma estrela no repositório!
