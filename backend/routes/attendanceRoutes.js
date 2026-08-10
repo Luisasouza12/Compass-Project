@@ -1,0 +1,2 @@
+const router = require('express').Router(); const controller = require('../controllers/attendanceController'); const { requireAdmin } = require('../middlewares/authMiddleware');
+router.post('/', controller.create); router.get('/dashboard', requireAdmin, controller.dashboard); router.get('/', requireAdmin, controller.list); router.get('/:id', requireAdmin, controller.getOne); router.put('/:id', requireAdmin, controller.update); router.delete('/:id', requireAdmin, controller.remove); module.exports = router;
