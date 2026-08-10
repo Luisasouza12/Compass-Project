@@ -4,3 +4,4 @@ backend/database/*.db
 backend/database/*.db-*
 npm-debug.log*
 .DS_Store
+work/npm-cache/ 
