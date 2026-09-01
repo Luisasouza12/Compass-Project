@@ -1,14 +1,13 @@
-# 🧭 Central+ — Sistema de Atendimento ao Cliente
+ Central+ Sistema de Atendimento ao Cliente
 
-Uma aplicação web desenvolvida para **registrar, encaminhar e acompanhar solicitações de clientes** de forma organizada e centralizada.
+Uma aplicação web desenvolvida para *registrar, encaminhar e acompanhar solicitações de clientes* de forma organizada e centralizada.
 
 O projeto foi desenvolvido como parte de um **portfólio de desenvolvimento web**, simulando um cenário real em que clientes realizam um atendimento guiado enquanto a equipe responsável gerencia as solicitações por meio de um painel administrativo.
 
----
 
-## ✨ Funcionalidades
+ Funcionalidades
 
-### 👤 Atendimento do cliente
+ Atendimento do cliente
 
 * Fluxo de atendimento dividido em três etapas.
 * Validação dos dados preenchidos.
@@ -17,7 +16,7 @@ O projeto foi desenvolvido como parte de um **portfólio de desenvolvimento web*
 * Interface responsiva e intuitiva.
 * Feedback visual para erros e diferentes status do atendimento.
 
-### 🔐 Painel administrativo
+ Painel administrativo
 
 * Autenticação para acesso ao painel.
 * Indicadores gerais dos atendimentos.
@@ -28,15 +27,14 @@ O projeto foi desenvolvido como parte de um **portfólio de desenvolvimento web*
 * Adição de observações internas.
 * Exclusão de atendimentos.
 
-### 🗄️ Persistência e API
+Persistência e API
 
 * Banco de dados SQLite criado automaticamente na primeira execução.
 * API REST para gerenciamento dos atendimentos.
 * Operações de criação, consulta, atualização e exclusão.
 
----
 
-## 🛠️ Tecnologias utilizadas
+ Tecnologias utilizadas
 
 | Tecnologia          | Utilização                             |
 | ------------------- | -------------------------------------- |
@@ -50,9 +48,8 @@ O projeto foi desenvolvido como parte de um **portfólio de desenvolvimento web*
 | **express-session** | Gerenciamento de sessões               |
 | **dotenv**          | Gerenciamento de variáveis de ambiente |
 
----
 
-## 📁 Estrutura do projeto
+ Estrutura do projeto
 
 ```text
 Compass-Project/
@@ -79,31 +76,31 @@ Compass-Project/
 
 ---
 
-## 🚀 Como executar
+ Como executar
 
-### 1. Clone o repositório
+ 1. Clone o repositório
 
 ```bash
 git clone https://github.com/Luisasouza12/Compass-Project.git
 ```
 
-### 2. Acesse a pasta do projeto
+ 2. Acesse a pasta do projeto
 
 ```bash
 cd Compass-Project
 ```
 
-### 3. Instale as dependências
+ 3. Instale as dependências
 
 ```bash
 npm install
 ```
 
-### 4. Configure as variáveis de ambiente
+ 4. Configure as variáveis de ambiente
 
 Copie o arquivo `.env.example` para `.env`:
 
-**Windows:**
+Windows:
 
 ```bash
 copy .env.example .env
@@ -111,7 +108,7 @@ copy .env.example .env
 
 Defina no arquivo `.env` as configurações necessárias para o painel administrativo.
 
-> ⚠️ O arquivo `.env` não deve ser enviado para o GitHub. Ele já está incluído no `.gitignore`.
+>  O arquivo `.env` não deve ser enviado para o GitHub. Ele já está incluído no `.gitignore`.
 
 ### 5. Inicie a aplicação
 
@@ -121,15 +118,15 @@ npm start
 
 O banco de dados SQLite e sua estrutura são criados automaticamente na primeira execução.
 
-### 6. Acesse a aplicação
+ 6. Acesse a aplicação
 
-**Atendimento do cliente:**
+Atendimento do cliente:
 
 ```text
 http://localhost:3000
 ```
 
-**Painel administrativo:**
+Painel administrativo:
 
 ```text
 http://localhost:3000/admin
@@ -137,9 +134,9 @@ http://localhost:3000/admin
 
 As credenciais utilizadas no ambiente de desenvolvimento são definidas pelas variáveis configuradas no `.env`.
 
----
 
-## 🔌 API REST
+
+ API REST
 
 | Método   | Endpoint                      | Descrição                              |
 | -------- | ----------------------------- | -------------------------------------- |
@@ -150,7 +147,7 @@ As credenciais utilizadas no ambiente de desenvolvimento são definidas pelas va
 | `DELETE` | `/api/atendimentos/:id`       | Exclui um atendimento                  |
 | `GET`    | `/api/atendimentos/dashboard` | Retorna os indicadores do painel       |
 
-### Exemplo de criação de atendimento
+ Exemplo de criação de atendimento
 
 ```json
 {
@@ -161,9 +158,9 @@ As credenciais utilizadas no ambiente de desenvolvimento são definidas pelas va
 }
 ```
 
----
 
-## 🔄 Fluxo da aplicação
+
+ Fluxo da aplicação
 
 ```text
 Cliente
@@ -183,9 +180,9 @@ Painel administrativo
 Gestão do atendimento
 ```
 
----
 
-## 🔮 Próximas melhorias
+
+ Próximas melhorias
 
 * [ ] Contas administrativas persistidas com senha criptografada.
 * [ ] Anexos nos atendimentos.
@@ -196,12 +193,11 @@ Gestão do atendimento
 * [ ] Implantação em ambiente de produção.
 * [ ] Armazenamento de sessão adequado para produção.
 
----
 
-## 👩‍💻 Sobre o projeto
+
+Sobre o projeto
 
 O **Central+** foi desenvolvido como projeto de portfólio com o objetivo de demonstrar conhecimentos em **desenvolvimento web, construção de APIs REST, gerenciamento de banco de dados, autenticação, organização de código e desenvolvimento de interfaces responsivas**.
 
----
 
-⭐ Se este projeto foi útil ou interessante para você, considere deixar uma estrela no repositório!
+Se este projeto foi útil ou interessante para você, considere deixar uma estrela no repositório!
